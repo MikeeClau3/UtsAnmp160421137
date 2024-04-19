@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">UtsAnmp160421137</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="novel_lovers">Novel Lovers</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="dont_have_acc">dont have account?</string>
+    <string name="create_new_account">CREATE NEW ACCOUNT</string>
+    <string name="error_while_loading_data">Error while loading data</string>
+    <string name="creator">Creator</string>
+    <string name="todo">TODO</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
+    <string name="read">READ</string>
+    <string name="next">Next</string>
+    <string name="previous">Back</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="change_password">Change Password</string>
+    <string name="update">Update</string>
+    <string name="logout">LogOut</string>
+    <string name="register">REGISTER</string>
+    <string name="last_names">Last Name</string>
+</resources>

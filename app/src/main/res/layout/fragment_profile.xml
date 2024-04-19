@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageProfile"
+            android:layout_width="239dp"
+            android:layout_height="132dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.061"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <ProgressBar
+            android:id="@+id/progressBarProfile"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="241dp"
+            android:layout_height="132dp"
+            android:layout_marginStart="84dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imagePhoto"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.061"
+            tools:ignore="UnknownId,UnknownIdInLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtInputLayoutFirstName"
+            android:layout_width="357dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageProfile">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtChangeFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/first_name"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtInputLayoutLastName"
+            android:layout_width="357dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInputLayoutFirstName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtChangeLastName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/last_names"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtInputLayoutPassword"
+            android:layout_width="360dp"
+            android:layout_height="67dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInputLayoutLastName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtChangePassword"
+                android:layout_width="360dp"
+                android:layout_height="match_parent"
+                android:hint="@string/change_password"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="127dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/logout"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:cornerRadius="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInputLayoutPassword" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="127dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="261dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/update"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:cornerRadius="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInputLayoutPassword" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

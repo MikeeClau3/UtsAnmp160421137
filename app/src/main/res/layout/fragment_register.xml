@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#6AA0B8"
+    android:backgroundTintMode="screen"
+    tools:context=".view.RegisterFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="127dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="56dp"
+            android:text="Create"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:cornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutRePwdRegis"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/txtTitleNewAcc"
+            android:layout_width="251dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="107dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="New Account"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextSizeCheck" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtInputLayoutUnameRegis"
+            android:layout_width="357dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitleNewAcc">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtRegisterUsername"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Username"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutFirstnameRegis"
+            android:layout_width="357dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInputLayoutUnameRegis">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtRegisFName"
+                android:layout_width="357dp"
+                android:layout_height="wrap_content"
+                android:hint="First Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutLastnameRegis"
+            android:layout_width="357dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFirstnameRegis">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtRegisLName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutEmailRegis"
+            android:layout_width="357dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastnameRegis">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtRegisEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPwdRegis"
+            android:layout_width="357dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmailRegis">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtRegisPwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutRePwdRegis"
+            android:layout_width="357dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutPwdRegis">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtRegisterrRePWD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Re-Password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigations"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.utsanmp160421137.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/actionRegisterFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/actionNovelListFragment"
+            app:destination="@id/novelListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.utsanmp160421137.view.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/actionLoginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.utsanmp160421137.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/novelListFragment"
+        android:name="com.example.utsanmp160421137.view.NovelListFragment"
+        android:label="fragment_novel_list"
+        tools:layout="@layout/fragment_novel_list" >
+        <action
+            android:id="@+id/actionNovelDetailFragment"
+            app:destination="@id/novelDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/novelDetailFragment"
+        android:name="com.example.utsanmp160421137.view.NovelDetailFragment"
+        android:label="fragment_novel_detail"
+        tools:layout="@layout/fragment_novel_detail" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+</navigation>

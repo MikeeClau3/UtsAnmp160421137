@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".view.NovelDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/novel_list_item"
+        android:layout_width="match_parent"
+        android:layout_height="367dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="382dp"
+            android:layout_height="349dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="105dp"
+            android:background="#FFFFFF"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.421"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="368dp"
+                android:layout_height="336dp">
+
+
+                <ImageView
+                    android:id="@+id/imagePhoto"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/todo"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/ic_launcher_foreground" />
+
+                <Button
+                    android:id="@+id/btnPrevious"
+                    android:layout_width="92dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="120dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/previous"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:cornerRadius="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDescription"
+                    app:layout_constraintVertical_bias="0.677" />
+
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="93dp"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/next"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    app:cornerRadius="50dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDescription"
+                    app:layout_constraintVertical_bias="0.692" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imagePhoto"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/txtTitleRead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/title"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/progressBar"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/txtCreator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/creator"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitleRead" />
+
+                <TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_width="315dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/description"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/btnRead"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCreator"
+                    tools:ignore="UnknownId" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
