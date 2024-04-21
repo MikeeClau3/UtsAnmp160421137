@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.example.utsanmp160421137.R
 import com.example.utsanmp160421137.databinding.FragmentProfileBinding
 import com.example.utsanmp160421137.viewModel.userViewModel
@@ -61,6 +62,11 @@ class ProfileFragment : Fragment() {
                 }
             })
 
+        }
+        binding.btnLogout.setOnClickListener{
+            loginUser.edit().clear().apply()
+             val action = ProfileFragmentDirections.actionBackLoginFragment()
+            Navigation.findNavController(view).navigate(action)
         }
 
 

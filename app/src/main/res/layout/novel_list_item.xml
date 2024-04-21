@@ -12,8 +12,8 @@
         android:layout_height="367dp">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="382dp"
-            android:layout_height="349dp"
+            android:layout_width="385dp"
+            android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginTop="105dp"
             android:background="#FFFFFF"
@@ -75,7 +75,7 @@
                 <TextView
                     android:id="@+id/txtTitleRead"
                     android:layout_width="wrap_content"
-                    android:layout_height="27dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="12dp"
                     android:fontFamily="sans-serif-condensed-medium"
@@ -87,9 +87,10 @@
 
                 <TextView
                     android:id="@+id/txtCreator"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
                     android:text="@string/creator"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"

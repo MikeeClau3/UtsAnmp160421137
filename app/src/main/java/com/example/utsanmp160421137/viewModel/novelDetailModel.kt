@@ -19,8 +19,9 @@ class novelDetailModel(application: Application):AndroidViewModel(application){
 
 
     fun novelDetail(id:String){
+        Log.d("id", id)
         queue = Volley.newRequestQueue(getApplication())
-        val url = "http://10.0.2.2/novels/novel_detail.php"
+        val url = "http://192.168.227.70/novels/novel_detail.php?id=${id}"
         val stringRequest = StringRequest(
             Request.Method.GET, url, {
                 novelDetailLD.value = Gson().fromJson(it, Novels::class.java)

@@ -28,7 +28,7 @@ class novelViewModel(application: Application):AndroidViewModel(application){
 //            Novels(2, "Dilan", "Dilanda pusing", "http://dummyimage.com/75x100.jpg/cc0000/ffffff", "Harono")
 //        )
         queue = Volley.newRequestQueue(getApplication())
-        val url = "http://10.0.2.2/novels/novel_data.json"
+        val url = "http://192.168.227.70/novels/novel_data.json"
 
         val stringRequest = StringRequest(
             Request.Method.GET, url, {

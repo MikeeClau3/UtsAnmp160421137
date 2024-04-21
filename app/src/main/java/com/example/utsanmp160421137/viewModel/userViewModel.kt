@@ -15,17 +15,34 @@ class userViewModel(application: Application): AndroidViewModel(application){
     val userLD = MutableLiveData<Users>()
     val registerLD = MutableLiveData<Boolean>()
     val updateLD = MutableLiveData<Boolean>()
+    val checkLD = MutableLiveData<Boolean>()
     val TAG = "volleyTag"
     private var queue:RequestQueue? = null
 
     fun checkLogin(username:String, password:String){
         queue = Volley.newRequestQueue(getApplication())
         //IP Change
-        val url = "http://10.0.2.2/novels/login.php"
+        val url = "http://192.168.227.70/novels/login.php"
 
         val stringRequest = object : StringRequest(
             Method.POST, url, {response->
-                userLD.value = Gson().fromJson(response, Users::class.java)
+//                userLD.value = Gson().fromJson(response, Users::class.java)
+                try {
+                    val userLog = Gson().fromJson(response,Users::class.java)
+                    if(userLog == null || userLog.id.isNullOrEmpty()){
+                        checkLD.value =false
+                    }
+                    else{
+                        userLD.value = userLog
+                        checkLD.value = true
+                    }
+
+                }
+                catch (e: Exception){
+                    checkLD.value = false
+                    Log.e("Login Fail", "Error parsing response : $response",e)
+                }
+
 
                 Toast.makeText(getApplication(), "Login Successful", Toast.LENGTH_SHORT).show()
                 Log.d("Success", "Response: ${response}")
@@ -49,7 +66,7 @@ class userViewModel(application: Application): AndroidViewModel(application){
     fun registerUser(username: String,firstname:String,lastname:String,email:String,password: String){
         queue = Volley.newRequestQueue(getApplication())
 
-        val url =  "http://10.0.2.2/novels/register.php"
+        val url =  "http://192.168.227.70/novels/register.php"
         val stringRequest = object : StringRequest(
             Method.POST, url, {response->
                 registerLD.value = true
@@ -76,7 +93,7 @@ class userViewModel(application: Application): AndroidViewModel(application){
     }
     fun updateUser(id:String, firstname: String, lastname: String, password: String){
         queue = Volley.newRequestQueue(getApplication())
-        val url = "http://10.0.2.2/novels/user_update.php"
+        val url = "http://192.168.227.70/novels/user_update.php"
         val stringRequest = object : StringRequest(
             Method.POST, url, {response->
                 updateLD.value = true

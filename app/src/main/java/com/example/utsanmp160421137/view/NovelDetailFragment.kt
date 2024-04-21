@@ -39,7 +39,7 @@ class NovelDetailFragment : Fragment() {
             }
             else{
                 binding.txtTitleRead.setText(it.title)
-                binding.txtCreator.setText("@${it.creatorName}")
+                binding.txtCreator.setText("${it.creatorName}")
                 val picasso = Picasso.Builder(binding.root.context)
                 picasso.listener{picasso, uri, exception-> exception.printStackTrace()}
                 picasso.build().load(it.imageUrl).into(binding.imagePhoto)
