@@ -1,5 +1,6 @@
 package com.example.utsanmp160421137.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -23,11 +24,16 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var  viewModel: userViewModel
     private lateinit var mainActivity: MainActivity
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is MainActivity){
-            mainActivity = context
-        }
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        if (context is MainActivity){
+//            mainActivity = context
+//        }
+//    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(false) // Menonaktifkan tombol kembali
     }
 //    val TAG = "volleyTag"
 //    private var queue: RequestQueue?=null
@@ -46,9 +52,17 @@ class LoginFragment : Fragment() {
         return view
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(userViewModel::class.java)
+
+//        (requireActivity() as AppCompatActivity).supportActionBar?.setDefaultDisplayHomeAsUpEnabled(false)
+        setHasOptionsMenu(true)
+
+        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+
         binding.btnSignIn.setOnClickListener{view->
             val username = binding.textInputLayoutUsername.editText?.text.toString()
             val pwd = binding.textInputLayoutPass.editText?.text.toString()
@@ -75,10 +89,12 @@ class LoginFragment : Fragment() {
                     else{
                         Toast.makeText(activity, "No user found with that username or password", Toast.LENGTH_SHORT).show()
                     }
+
                 })
             }
 
         }
+
         binding.buttonCreateNewAcc.setOnClickListener{
             val action = LoginFragmentDirections.actionRegisterFragment()
             Navigation.findNavController(it).navigate(action)

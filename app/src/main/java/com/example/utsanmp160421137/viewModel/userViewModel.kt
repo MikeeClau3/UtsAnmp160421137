@@ -29,23 +29,26 @@ class userViewModel(application: Application): AndroidViewModel(application){
 //                userLD.value = Gson().fromJson(response, Users::class.java)
                 try {
                     val userLog = Gson().fromJson(response,Users::class.java)
-                    if(userLog == null || userLog.id.isNullOrEmpty()){
-                        checkLD.value =false
-                    }
-                    else{
+                    if(userLog != null ){
+
                         userLD.value = userLog
                         checkLD.value = true
+
                     }
+                    else{
+                        checkLD.value =false
+                    }
+                    Toast.makeText(getApplication(), "Login Successful", Toast.LENGTH_SHORT).show()
+                    Log.d("Success", "Response: ${response}")
 
                 }
                 catch (e: Exception){
-                    checkLD.value = false
+//                    checkLD.value = false
+                    Toast.makeText(getApplication(), "Login Failed", Toast.LENGTH_SHORT).show()
                     Log.e("Login Fail", "Error parsing response : $response",e)
                 }
 
 
-                Toast.makeText(getApplication(), "Login Successful", Toast.LENGTH_SHORT).show()
-                Log.d("Success", "Response: ${response}")
             }, {
                 Toast.makeText(getApplication(), "Login Failed", Toast.LENGTH_SHORT).show()
                 Log.d("login error", it.toString())
@@ -118,6 +121,10 @@ class userViewModel(application: Application): AndroidViewModel(application){
         queue?.add(stringRequest)
 
     }
+    fun isUserLogin(): Boolean{
+        return userLD.value != null && !userLD.value?.id.isNullOrEmpty()
+    }
+
     override fun onCleared() {
         super.onCleared()
         queue?.cancelAll(TAG)
